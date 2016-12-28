@@ -1,0 +1,25 @@
+---
+cfssl_version: R1.2
+cfssl_bin_directory: /usr/local/bin
+cfssl_directory: /etc/cfssl
+
+ca_csr_cn: Kubernetes
+ca_csr_key_algo: rsa
+ca_csr_key_size: 2048
+ca_csr_names_c: US
+ca_csr_names_l: Portland
+ca_csr_names_o: Kubernetes
+ca_csr_names_ou: CA
+ca_csr_names_st: Oregon
+
+kubernetes_csr_cn: Kubernetes
+kubernetes_csr_key_algo: rsa
+kubernetes_csr_key_size: 2048
+kubernetes_csr_names_c: US
+kubernetes_csr_names_l: Portland
+kubernetes_csr_names_o: Kubernetes
+kubernetes_csr_names_ou: CA
+kubernetes_csr_names_st: Oregon
+
+kubernetes_cert_hosts:
+  - 127.0.0.1

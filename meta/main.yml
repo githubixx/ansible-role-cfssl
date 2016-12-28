@@ -1,0 +1,14 @@
+galaxy_info:
+  author: Robert Wimmer
+  description: Installs CFSSL PKI toolkit.
+  license: license (GPLv2, CC-BY, etc)
+  min_ansible_version: 2.2
+  platforms:
+  - name: Ubuntu
+    versions:
+    - xenial
+  galaxy_tags:
+    - tls
+    - certificate
+    - ca
+    - security

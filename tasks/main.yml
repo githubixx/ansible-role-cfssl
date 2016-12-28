@@ -1,0 +1,71 @@
+---
+- name: Download statically linked cfssl binary
+  get_url:
+    url: https://pkg.cfssl.org/{{cfssl_version}}/cfssl_linux-amd64
+    dest: "{{cfssl_bin_directory}}/cfssl"
+    mode: 0755
+    checksum: sha256:eb34ab2179e0b67c29fd55f52422a94fe751527b06a403a79325fed7cf0145bd
+  tags:
+    - cfssl
+
+- name: Download statically linked cfssljson binary
+  get_url:
+    url: https://pkg.cfssl.org/{{cfssl_version}}/cfssljson_linux-amd64
+    dest: "{{cfssl_bin_directory}}/cfssljson"
+    mode: 0755
+  tags:
+    - cfssl
+
+- name: Create directory for CA files on remote host
+  file:
+    path: "{{cfssl_directory}}"
+    owner: root
+    group: root
+    mode: 0700
+    state: directory
+  tags:
+    - cfssl
+
+- name: Copy CA configuration file to remote host
+  copy:
+    src: "ca-config.json"
+    dest: "{{cfssl_directory}}/ca-config.json"
+    mode: 0600
+  tags:
+    - cfssl
+
+- name: Copy the CA CSR file
+  template:
+    src: ca-csr.json.j2
+    dest: "{{cfssl_directory}}/ca-csr.json"
+    owner: root
+    group: root
+    mode: 0600
+  tags:
+    - cfssl
+
+- name: Copy the Kubernetes CSR file
+  template:
+    src: kubernetes-csr.json.j2
+    dest: "{{cfssl_directory}}/kubernetes-csr.json"
+    owner: root
+    group: root
+    mode: 0600
+  tags:
+    - cfssl
+
+- name: Generate the CA certificate and private key on remote host
+  shell: cfssl gencert -initca ca-csr.json | cfssljson -bare ca
+  args:
+    chdir: "{{cfssl_directory}}"
+    creates: "{{cfssl_directory}}/ca-key.pem"
+  tags:
+    - cfssl
+
+- name: Generate the single Kubernetes TLS certificate
+  shell: cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kubernetes kubernetes-csr.json | cfssljson -bare kubernetes
+  args:
+    chdir: "{{cfssl_directory}}"
+    creates: "{{cfssl_directory}}/kubernetes-key.pem"
+  tags:
+    - cfssl

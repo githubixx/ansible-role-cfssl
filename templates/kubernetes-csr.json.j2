@@ -1,0 +1,25 @@
+{
+  "CN": "{{kubernetes_csr_cn}}",
+  "hosts": [
+    {% for item in kubernetes_cert_hosts %}
+    {% if not loop.last %}
+    "{{ item }}",
+    {% else %}
+    "{{ item }}"
+    {% endif %}
+    {% endfor %}
+  ],
+  "key": {
+    "algo": "{{kubernetes_csr_key_algo}}",
+    "size": {{kubernetes_csr_key_size}}
+  },
+  "names": [
+    {
+      "C": "{{kubernetes_csr_names_c}}",
+      "L": "{{kubernetes_csr_names_l}}",
+      "O": "{{kubernetes_csr_names_o}}",
+      "OU": "{{kubernetes_csr_names_ou}}",
+      "ST": "{{kubernetes_csr_names_st}}"
+    }
+  ]
+}
