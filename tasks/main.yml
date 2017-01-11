@@ -54,7 +54,7 @@
   tags:
     - cfssl
 
-- name: Generate the CA certificate and private key on remote host
+- name: Generate the CA certificate and private key
   shell: cfssl gencert -initca ca-csr.json | cfssljson -bare ca
   args:
     chdir: "{{cfssl_directory}}"
