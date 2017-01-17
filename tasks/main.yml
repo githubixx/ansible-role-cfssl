@@ -16,17 +16,17 @@
   tags:
     - cfssl
 
-- name: Create directory for CA files on remote host
+- name: Create directory for CA files
   file:
     path: "{{cfssl_directory}}"
     owner: root
     group: root
-    mode: 0700
+    mode: 0755
     state: directory
   tags:
     - cfssl
 
-- name: Copy CA configuration file to remote host
+- name: Copy CA configuration file
   copy:
     src: "ca-config.json"
     dest: "{{cfssl_directory}}/ca-config.json"
@@ -67,5 +67,16 @@
   args:
     chdir: "{{cfssl_directory}}"
     creates: "{{cfssl_directory}}/kubernetes-key.pem"
+  tags:
+    - cfssl
+
+- name: Change file permissions
+  file:
+    path: "{{cfssl_directory}}/{{item}}"
+    mode: 0644
+  with_items:
+    - ca.pem
+    - kubernetes-key.pem
+    - kubernetes.pem
   tags:
     - cfssl
