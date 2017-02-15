@@ -1,7 +1,7 @@
 CFSSL
 =====
 
-Installes CFSSL (CloudFlare's PKI toolkit). I used it as a lightweight CA for Kubernetes.
+Installes CFSSL (CloudFlare's PKI toolkit). I used it as a lightweight CA for Kubernetes. See [Kubernetes the not so hard way with Ansible (at scaleway) - part 4 - certificate authority](https://www.tauceti.blog/post/kubernetes-the-not-so-hard-way-with-ansible-at-scaleway-part-4/).
 
 Role Variables
 --------------
@@ -53,4 +53,4 @@ GNU GENERAL PUBLIC LICENSE Version 3
 Author Information
 ------------------
 
-http://www.tauceti.net
+http://www.tauceti.blog
