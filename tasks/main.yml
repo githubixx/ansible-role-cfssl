@@ -16,67 +16,12 @@
   tags:
     - cfssl
 
-- name: Create directory for CA files
+- name: Create directory for CA and certificate files
   file:
-    path: "{{cfssl_directory}}"
+    path: "{{cfssl_conf_directory}}"
     owner: root
     group: root
     mode: 0755
     state: directory
-  tags:
-    - cfssl
-
-- name: Copy CA configuration file
-  copy:
-    src: "ca-config.json"
-    dest: "{{cfssl_directory}}/ca-config.json"
-    mode: 0600
-  tags:
-    - cfssl
-
-- name: Copy the CA CSR file
-  template:
-    src: ca-csr.json.j2
-    dest: "{{cfssl_directory}}/ca-csr.json"
-    owner: root
-    group: root
-    mode: 0600
-  tags:
-    - cfssl
-
-- name: Copy the Kubernetes CSR file
-  template:
-    src: kubernetes-csr.json.j2
-    dest: "{{cfssl_directory}}/kubernetes-csr.json"
-    owner: root
-    group: root
-    mode: 0600
-  tags:
-    - cfssl
-
-- name: Generate the CA certificate and private key
-  shell: cfssl gencert -initca ca-csr.json | cfssljson -bare ca
-  args:
-    chdir: "{{cfssl_directory}}"
-    creates: "{{cfssl_directory}}/ca-key.pem"
-  tags:
-    - cfssl
-
-- name: Generate the single Kubernetes TLS certificate
-  shell: cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kubernetes kubernetes-csr.json | cfssljson -bare kubernetes
-  args:
-    chdir: "{{cfssl_directory}}"
-    creates: "{{cfssl_directory}}/kubernetes-key.pem"
-  tags:
-    - cfssl
-
-- name: Change file permissions
-  file:
-    path: "{{cfssl_directory}}/{{item}}"
-    mode: 0644
-  with_items:
-    - ca.pem
-    - kubernetes-key.pem
-    - kubernetes.pem
   tags:
     - cfssl

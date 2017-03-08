@@ -1,7 +1,7 @@
-CFSSL
-=====
+ansible-role-cfssl
+==================
 
-Installes CFSSL (CloudFlare's PKI toolkit). I used it as a lightweight CA for Kubernetes. See [Kubernetes the not so hard way with Ansible (at scaleway) - part 4 - certificate authority](https://www.tauceti.blog/post/kubernetes-the-not-so-hard-way-with-ansible-at-scaleway-part-4/).
+Installes CFSSL (CloudFlare's PKI toolkit) binaries locally. I used it as a lightweight certificate authority (CA) for Kubernetes. This Ansible playbook is used in [Kubernetes the not so hard way with Ansible (at Scaleway) - part 4 - certificate authority](https://www.tauceti.blog/post/kubernetes-the-not-so-hard-way-with-ansible-at-scaleway-part-4/).
 
 Role Variables
 --------------
@@ -9,40 +9,18 @@ Role Variables
 ```
 cfssl_version: R1.2
 cfssl_bin_directory: /usr/local/bin
-cfssl_ca_remote_directory: /etc/cfssl
-cfssl_ca_local_directory: /etc/cfssl
-
-ca_csr_cn: Kubernetes
-ca_csr_key_algo: rsa
-ca_csr_key_size: 2048
-ca_csr_names_c: US
-ca_csr_names_l: Portland
-ca_csr_names_o: Kubernetes
-ca_csr_names_ou: CA
-ca_csr_names_st: Oregon
-
-kubernetes_csr_cn: Kubernetes
-kubernetes_csr_key_algo: rsa
-kubernetes_csr_key_size: 2048
-kubernetes_csr_names_c: US
-kubernetes_csr_names_l: Portland
-kubernetes_csr_names_o: Kubernetes
-kubernetes_csr_names_ou: CA
-kubernetes_csr_names_st: Oregon
-
-kubernetes_cert_hosts:
-  - 127.0.0.1
+cfssl_conf_directory: /etc/cfssl
 ```
-Change the `ca_csr_*` and `kubernetes_csr_*` variables to your need. The information is used for the CA and Kubernetes certificate signing request and included in your certifcates. Pay attention to `kubernetes_cert_hosts` list. Include all hosts here that use your certificate. Wildcards should work too e.g. `*.example.net`.
+
+`cfssl_version` determines the version to download. `cfssl_bin_directory` specifices where to put the "cfssl" binary. In `cfssl_conf_directory` the CA files and other generated certificates will be stored.
 
 Example Playbook
 ----------------
 
 ```
 - hosts: ca
-
   roles:
-    - cfssl
+    - githubixx.cfssl
 ```
 
 License
