@@ -18,7 +18,7 @@ Example Playbook
 ----------------
 
 ```
-- hosts: ca
+- hosts: k8s_ca
   roles:
     - githubixx.cfssl
 ```
