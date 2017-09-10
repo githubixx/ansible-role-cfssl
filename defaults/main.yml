@@ -1,4 +1,3 @@
 ---
 cfssl_version: R1.2
 cfssl_bin_directory: /usr/local/bin
-cfssl_conf_directory: /etc/cfssl
