@@ -13,6 +13,10 @@ The tag `v1.0.0_r1.2.0` means that this is the release `v1.0.0` of the Ansible r
 Changelog
 ---------
 
+**v2.0.2_r1.2.0**
+
+- update documentation of variables / update README
+
 **v2.0.1_r1.2.0**
 
 - variable values should be strings
