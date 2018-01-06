@@ -10,8 +10,20 @@ I tag every release and try to stay with [semantic versioning](http://semver.org
 
 The tag `v1.0.0_r1.2.0` means that this is the release `v1.0.0` of the Ansible role which uses release `r1.2.0` of CFSSL.
 
-- v2.0.0_r1.2.0 - removed `cfssl_conf_directory` variable (not needed as this role only installs the CFSSL binaries)
-- v1.0.0_r1.2.0 - initial release
+Changelog
+---------
+
+**v2.0.1_r1.2.0**
+
+- variable values should be strings
+
+**v2.0.0_r1.2.0**
+
+- removed `cfssl_conf_directory` variable (not needed as this role only installs the CFSSL binaries)
+
+**v1.0.0_r1.2.0**
+
+- initial release
 
 
 Role Variables
