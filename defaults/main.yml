@@ -1,3 +1,5 @@
 ---
+#Specifies the version of CFSSL toolkit we want to download and use
 cfssl_version: "R1.2"
+# The directory where CFSSL binaries will be installed
 cfssl_bin_directory: "/usr/local/bin"

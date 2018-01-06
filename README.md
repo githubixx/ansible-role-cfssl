@@ -1,5 +1,5 @@
-role-cfssl
-==========
+ansible-role-cfssl
+==================
 
 Installes CFSSL (CloudFlare's PKI toolkit) binaries. I used it as a lightweight certificate authority (CA) for Kubernetes. This Ansible playbook is used in [Kubernetes the not so hard way with Ansible (at Scaleway) - part 4 - certificate authority](https://www.tauceti.blog/post/kubernetes-the-not-so-hard-way-with-ansible-at-scaleway-part-4/).
 
@@ -30,11 +30,11 @@ Role Variables
 --------------
 
 ```
-cfssl_version: R1.2
-cfssl_bin_directory: /usr/local/bin
+#Specifies the version of CFSSL toolkit we want to download and use
+cfssl_version: "R1.2"
+# The directory where CFSSL binaries will be installed
+cfssl_bin_directory: "/usr/local/bin"
 ```
-
-`cfssl_version` determines the version to download. `cfssl_bin_directory` specifices where to put the "cfssl" binary.
 
 Example Playbook
 ----------------
