@@ -1,7 +1,7 @@
 ansible-role-cfssl
 ==================
 
-Installes CFSSL (CloudFlare's PKI toolkit) binaries. I used it as a lightweight certificate authority (CA) for Kubernetes. This Ansible playbook is used in [Kubernetes the not so hard way with Ansible (at Scaleway) - part 4 - certificate authority](https://www.tauceti.blog/post/kubernetes-the-not-so-hard-way-with-ansible-at-scaleway-part-4/).
+Installes CFSSL (CloudFlare's PKI toolkit) binaries. I used it as a lightweight certificate authority (CA) for Kubernetes. This Ansible playbook is used in [Kubernetes the not so hard way with Ansible - certificate authority](https://www.tauceti.blog/post/kubernetes-the-not-so-hard-way-with-ansible-certificate-authority/).
 
 Versions
 --------
@@ -12,6 +12,10 @@ The tag `v1.0.0_r1.2.0` means that this is the release `v1.0.0` of the Ansible r
 
 Changelog
 ---------
+
+**v2.0.3_r1.2.0**
+
+- update README
 
 **v2.0.2_r1.2.0**
 
