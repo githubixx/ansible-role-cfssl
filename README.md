@@ -8,31 +8,12 @@ Versions
 
 I tag every release and try to stay with [semantic versioning](http://semver.org). If you want to use the role I recommend to checkout the latest tag. The master branch is basically development while the tags mark stable releases. But in general I try to keep master in good shape too.
 
-The tag `v1.0.0_r1.2.0` means that this is the release `v1.0.0` of the Ansible role which uses release `r1.2.0` of CFSSL.
+The tag `1.0.0+1.2.0` means that this is the release `1.0.0` of the Ansible role which uses release `1.2.0` of CFSSL.
 
 Changelog
 ---------
 
-**v2.0.3_r1.2.0**
-
-- update README
-
-**v2.0.2_r1.2.0**
-
-- update documentation of variables / update README
-
-**v2.0.1_r1.2.0**
-
-- variable values should be strings
-
-**v2.0.0_r1.2.0**
-
-- removed `cfssl_conf_directory` variable (not needed as this role only installs the CFSSL binaries)
-
-**v1.0.0_r1.2.0**
-
-- initial release
-
+see [CHANGELOG.md](https://github.com/githubixx/ansible-role-cfssl/blob/master/CHANGELOG.md)
 
 Role Variables
 --------------
