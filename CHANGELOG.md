@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+**4.0.0+1.2.0**
+
+- allow other architectures to download
+- checksum as variable and for `cfssl` and `cfssljson` binary
+
 **3.0.0+1.2.0**
 
 - use correct semantic versioning as described in https://semver.org. Needed for Ansible Galaxy importer as it now insists on using semantic versioning.
