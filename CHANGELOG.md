@@ -5,6 +5,7 @@ Changelog
 
 - allow other architectures to download
 - checksum as variable and for `cfssl` and `cfssljson` binary
+- add Archlinux as supported platform
 
 **3.0.0+1.2.0**
 
