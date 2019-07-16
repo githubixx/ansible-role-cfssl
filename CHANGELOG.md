@@ -1,6 +1,10 @@
 Changelog
 ---------
 
+**Tags removed - no functionality change**
+
+- Removed all tags before `3.0.0+1.2.0`. That was needed because Ansible Galaxy don't work with version tags that don't respect semantic versioning scheme (SemVer)
+
 **4.0.0+1.2.0**
 
 - allow other architectures to download
