@@ -1,6 +1,10 @@
 Changelog
 ---------
 
+**5.0.1+1.4.0**
+
+- Role requires Ansible version >= 2.7 now
+
 **5.0.0+1.4.0**
 
 - Update `cfssl` tools to version 1.4.0
