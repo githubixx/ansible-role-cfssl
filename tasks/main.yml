@@ -1,22 +1,20 @@
 ---
-- name: Download statically linked cfssl binary
+- name: Downloading cfssl binaries
   get_url:
-    url: "https://pkg.cfssl.org/{{ cfssl_version }}/cfssl_{{ cfssl_os }}-{{ cfssl_arch }}"
-    dest: "{{ cfssl_bin_directory }}/cfssl"
+    url: "https://github.com/cloudflare/cfssl/releases/download/v{{ cfssl_version }}/{{ item }}_{{ cfssl_version }}_{{ cfssl_os }}_{{ cfssl_arch }}"
+    dest: "{{ cfssl_bin_directory }}/{{ item }}"
     mode: 0755
     owner: "{{ cfssl_owner }}"
     group: "{{ cfssl_group }}"
-    checksum: "{{ cfssl_checksum }}"
-  tags:
+    checksum: "sha256:{{ chssl_checksum_url }}"
+  with_items:
     - cfssl
-
-- name: Download statically linked cfssljson binary
-  get_url:
-    url: "https://pkg.cfssl.org/{{ cfssl_version }}/cfssljson_{{ cfssl_os }}-{{ cfssl_arch }}"
-    dest: "{{ cfssl_bin_directory }}/cfssljson"
-    owner: "{{ cfssl_owner }}"
-    group: "{{ cfssl_group }}"
-    checksum: "{{ cfssljson_checksum }}"
-    mode: 0755
+    - cfssl-bundle
+    - cfssl-certinfo
+    - cfssl-newkey
+    - cfssl-scan
+    - cfssljson
+    - mkbundle
+    - multirootca
   tags:
     - cfssl
