@@ -5,7 +5,7 @@ Changelog
 
 - Update `cfssl` tools to version 1.4.0
 - Since Cloudflare changed the way how to distribute binaries it's no longer possible to use `cfssl` binaries before version 1.4.0. If you need older binaries you can clone this Github repository and checkout `v4.0.0+1.2.0` branch
-- Added new binaries: `cfssl-bundle`,`cfssl-certinfo`,`cfssl-newkey`,'cfssl-scan`, `mkbundle` and `multirootca`
+- Added new binaries: `cfssl-bundle`,`cfssl-certinfo`,`cfssl-newkey`,`cfssl-scan`, `mkbundle` and `multirootca`
 - `cfssl_version` changed to `1.4.0`
 - `cfssl_checksum` and `cfssljson_checksum` variables removed as they're no longer needed (replaced by `chssl_checksum_url`)
 - `chssl_checksum_url` specifies the URL to a file that contains the SHA256 checksums for the various `cfssl` binaries
