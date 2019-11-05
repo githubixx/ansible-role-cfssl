@@ -6,7 +6,7 @@
     mode: 0755
     owner: "{{ cfssl_owner }}"
     group: "{{ cfssl_group }}"
-    checksum: "sha256:{{ chssl_checksum_url }}"
+    checksum: "sha256:{{ cfssl_checksum_url }}"
   with_items:
     - cfssl
     - cfssl-bundle
