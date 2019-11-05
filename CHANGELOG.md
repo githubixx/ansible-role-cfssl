@@ -1,6 +1,10 @@
 Changelog
 ---------
 
+**6.0.0+1.4.0**
+
+- Renamed `chssl_checksum_url` to `cfssl_checksum_url`
+
 **5.0.1+1.4.0**
 
 - Role requires Ansible version >= 2.7 now
