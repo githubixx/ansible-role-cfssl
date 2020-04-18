@@ -1,6 +1,10 @@
 Changelog
 ---------
 
+**6.0.0+1.4.1**
+
+- Update `cfssl` tools to version 1.4.1
+
 **6.0.0+1.4.0**
 
 - Renamed `chssl_checksum_url` to `cfssl_checksum_url`
