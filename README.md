@@ -8,7 +8,7 @@ Versions
 
 I tag every release and try to stay with [semantic versioning](http://semver.org). If you want to use the role I recommend to checkout the latest tag. The master branch is basically development while the tags mark stable releases. But in general I try to keep master in good shape too.
 
-The tag `6.0.0+1.4.1` means that this is the release `6.0.0` of the Ansible role which uses release `1.4.1` of CFSSL.
+The tag `7.0.0+1.5.0` means that this is the release `7.0.0` of the Ansible role which uses release `1.5.0` of CFSSL.
 
 Changelog
 ---------
@@ -20,19 +20,51 @@ Role Variables
 
 ```
 # Specifies the version of CFSSL toolkit we want to download and use
-cfssl_version: "1.4.1"
+cfssl_version: "1.5.0"
+
 # Checksum file
 cfssl_checksum_url: "https://github.com/cloudflare/cfssl/releases/download/v{{ cfssl_version }}/cfssl_{{ cfssl_version }}_checksums.txt"
+
 # The directory where CFSSL binaries will be installed
 cfssl_bin_directory: "/usr/local/bin"
+
 # Owner of the cfssl binaries
 cfssl_owner: "root"
+
 # Group of cfssl binaries
 cfssl_group: "root"
+
 # Operarting system on which "cfssl/cfssljson" should run on
 cfssl_os: "linux" # use "darwin" for MacOS X, "windows" for Windows
+
 # Processor architecture "cfssl/cfssljson" should run on
 cfssl_arch: "amd64" # the only supported architecture at the moment
+```
+
+Testing
+-------
+
+This role has a small test setup that is created using [molecule](https://github.com/ansible-community/molecule). To run the tests follow the molecule [install guide](https://molecule.readthedocs.io/en/latest/installation.html). Also ensure that a Docker daemon runs on your machine.
+
+Assuming [Docker](https://www.docker.io) is already installed you need at least two Python packages:
+
+```
+pip3 install --user molecule
+pip3 install --user molecule-docker
+```
+
+Afterwards molecule can be executed:
+
+```
+molecule converge
+```
+
+This will setup two Docker container with Ubuntu 20.04 and 18.04 with `cfssl` installed.
+
+To clean up run
+
+```
+molecule destroy
 ```
 
 Example Playbook

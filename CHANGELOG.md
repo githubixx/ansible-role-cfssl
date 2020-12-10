@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+**7.0.0+1.5.0**
+
+- Update `cfssl` tools to version 1.5.0
+- Added molecule test
+
 **6.0.0+1.4.1**
 
 - Update `cfssl` tools to version 1.4.1
