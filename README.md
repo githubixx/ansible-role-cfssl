@@ -41,6 +41,32 @@ cfssl_os: "linux" # use "darwin" for MacOS X, "windows" for Windows
 cfssl_arch: "amd64" # the only supported architecture at the moment
 ```
 
+Testing
+-------
+
+This role has a small test setup that is created using [molecule](https://github.com/ansible-community/molecule). To run the tests follow the molecule [install guide](https://molecule.readthedocs.io/en/latest/installation.html). Also ensure that a Docker daemon runs on your machine.
+
+Assuming [Docker](https://www.docker.io) is already installed you need at least two Python packages:
+
+```
+pip3 install --user molecule
+pip3 install --user molecule-docker
+```
+
+Afterwards molecule can be executed:
+
+```
+molecule converge
+```
+
+This will setup two Docker container with Ubuntu 20.04 and 18.04 with `cfssl` installed.
+
+To clean up run
+
+```
+molecule destroy
+```
+
 Example Playbook
 ----------------
 
