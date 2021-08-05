@@ -1,6 +1,10 @@
 Changelog
 ---------
 
+**7.1.0+1.6.0**
+
+- Update `cfssl` tools to version 1.6.0
+
 **7.0.0+1.5.0**
 
 - Update `cfssl` tools to version 1.5.0
