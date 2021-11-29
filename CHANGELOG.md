@@ -1,9 +1,11 @@
 Changelog
 ---------
 
-**7.1.1+1.6.1**
+**8.0.0+1.6.1**
 
 - Update `cfssl` tools to version 1.6.1
+- Add support for Debian 10 (Buster) + 11 (Bullseye)
+- Remove Ubuntu 16.04 (Xenial) support
 
 **7.1.0+1.6.0**
 
