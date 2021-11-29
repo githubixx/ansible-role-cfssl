@@ -1,7 +1,7 @@
 ansible-role-cfssl
 ==================
 
-Installes CFSSL (CloudFlare's PKI toolkit) binaries. I used it as a lightweight certificate authority (CA) for Kubernetes. This Ansible playbook is used in [Kubernetes the not so hard way with Ansible - certificate authority](https://www.tauceti.blog/post/kubernetes-the-not-so-hard-way-with-ansible-certificate-authority/).
+Installes CFSSL (CloudFlare's PKI toolkit) binaries. I used it as a lightweight certificate authority (CA) for Kubernetes. This Ansible playbook is used in [Kubernetes the not so hard way with Ansible - certificate authority](https://www.tauceti.blog/posts/kubernetes-the-not-so-hard-way-with-ansible-certificate-authority/).
 
 Versions
 --------
@@ -59,7 +59,7 @@ Afterwards molecule can be executed:
 molecule converge
 ```
 
-This will setup two Docker container with Ubuntu 20.04 and 18.04 with `cfssl` installed.
+This will setup some Docker container with Ubuntu 18.04/20.04 and Debian 10/11 with `cfssl` installed.
 
 To clean up run
 
