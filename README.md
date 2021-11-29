@@ -20,7 +20,7 @@ Role Variables
 
 ```
 # Specifies the version of CFSSL toolkit we want to download and use
-cfssl_version: "1.6.0"
+cfssl_version: "1.6.1"
 
 # Checksum file
 cfssl_checksum_url: "https://github.com/cloudflare/cfssl/releases/download/v{{ cfssl_version }}/cfssl_{{ cfssl_version }}_checksums.txt"
