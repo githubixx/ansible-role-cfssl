@@ -15,7 +15,7 @@ cfssl_owner: "root"
 cfssl_group: "root"
 
 # Operarting system on which "cfssl/cfssljson" should run on
-cfssl_os: "linux" # use "darwin" for MacOS X, "windows" for Windows
+cfssl_os: "linux"    # use "darwin" for MacOS X, "windows" for Windows
 
 # Processor architecture "cfssl/cfssljson" should run on
-cfssl_arch: "amd64" # the only supported architecture at the moment
+cfssl_arch: "amd64"  # the only supported architecture at the moment
