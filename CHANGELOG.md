@@ -1,11 +1,17 @@
 Changelog
 ---------
 
+**8.1.0+1.6.3**
+
+- Update `cfssl` tools to version 1.6.3
+- add Github release action to push new release to Ansible Galaxy
+- add `.yamllint`
+
 **8.0.1+1.6.2**
 
 - Update `cfssl` tools to version 1.6.2
 - tasks/main.yml: use FQDN Ansible module name
--  meta/main.yml: update `min_ansible_version` to `2.9` / add `role_name` and `namespace`
+- meta/main.yml: update `min_ansible_version` to `2.9` / add `role_name` and `namespace`
 
 **8.0.0+1.6.1**
 
