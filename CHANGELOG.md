@@ -1,6 +1,12 @@
 Changelog
 ---------
 
+**8.2.0+1.6.4**
+
+- Update `cfssl` tools to version 1.6.4
+- Add support for Ubuntu 22.04
+- Add verify step for Molecule
+
 **8.1.0+1.6.3**
 
 - Update `cfssl` tools to version 1.6.3
