@@ -1,0 +1,16 @@
+---
+- name: Verify setup
+  hosts: all
+  vars:
+    expected_output: "1.6."
+  tasks:
+    - name: Execute cfssl version to capture output
+      ansible.builtin.command:
+        cmd: cfssl version
+      register: cfssl_version_output
+      changed_when: false
+
+    - name: Ensure cfssl version output contains correct version string
+      ansible.builtin.assert:
+        that:
+          - "expected_output in cfssl_version_output.stdout"
