@@ -8,7 +8,7 @@ Versions
 
 I tag every release and try to stay with [semantic versioning](http://semver.org). If you want to use the role I recommend to checkout the latest tag. The master branch is basically development while the tags mark stable releases. But in general I try to keep master in good shape too.
 
-The tag `8.0.2+1.6.3` means that this is the release `8.0.2` of the Ansible role which uses release `1.6.3` of CFSSL.
+The tag `8.1.1+1.6.4` means that this is the release `8.1.1` of the Ansible role which uses release `1.6.4` of CFSSL.
 
 Changelog
 ---------
@@ -20,7 +20,7 @@ Role Variables
 
 ```
 # Specifies the version of CFSSL toolkit we want to download and use
-cfssl_version: "1.6.3"
+cfssl_version: "1.6.4"
 
 # Checksum file
 cfssl_checksum_url: "https://github.com/cloudflare/cfssl/releases/download/v{{ cfssl_version }}/cfssl_{{ cfssl_version }}_checksums.txt"
