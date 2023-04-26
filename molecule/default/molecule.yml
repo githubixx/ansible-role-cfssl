@@ -11,6 +11,9 @@ lint: |
   ansible-lint .
 
 platforms:
+  - name: test-cfssl-ubuntu2204
+    image: ubuntu:22.04
+    pre_build_image: true
   - name: test-cfssl-ubuntu2004
     image: ubuntu:20.04
     pre_build_image: true
