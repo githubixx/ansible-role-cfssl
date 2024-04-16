@@ -18,13 +18,23 @@ See full [CHANGELOG.md](https://github.com/githubixx/ansible-role-cfssl/blob/mas
 
 ## 8.3.0+1.6.5
 
-- Update `cfssl` tools to version 1.6.5
+- **BREAKING**
+  - remove Ubuntu 18.04 support (reached EOL)
+  - remove Debian 10 support (reached EOL)
+
+- **UPDATE**
+  - Update `cfssl` tools to version 1.6.5
+  - add Debian 12 support
+
+- **MOLECULE**
+  - fix ansible-lint issues in `converge.yml`
 
 ## 8.2.0+1.6.4
 
-- Update `cfssl` tools to version 1.6.4
-- Add support for Ubuntu 22.04
-- Add verify step for Molecule
+- **UPDATE**
+  - Update `cfssl` tools to version 1.6.4
+  - Add support for Ubuntu 22.04
+  - Add verify step for Molecule
 
 ## Installation
 
