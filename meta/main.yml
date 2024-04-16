@@ -14,6 +14,7 @@ galaxy_info:
         - "jammy"
     - name: Debian
       versions:
+        - "bookworm"
         - "bullseye"
   galaxy_tags:
     - tls
