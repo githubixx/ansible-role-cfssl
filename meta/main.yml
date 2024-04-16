@@ -10,12 +10,11 @@ galaxy_info:
     - name: ArchLinux
     - name: Ubuntu
       versions:
-        - "bionic"
         - "focal"
         - "jammy"
     - name: Debian
       versions:
-        - "buster"
+        - "bookworm"
         - "bullseye"
   galaxy_tags:
     - tls

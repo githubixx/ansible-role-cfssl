@@ -17,11 +17,8 @@ platforms:
   - name: test-cfssl-ubuntu2004
     image: ubuntu:20.04
     pre_build_image: true
-  - name: test-cfssl-ubuntu1804
-    image: ubuntu:18.04
-    pre_build_image: true
-  - name: test-cfssl-debian10
-    image: debian:10
+  - name: test-cfssl-debian12
+    image: debian:12
     pre_build_image: true
   - name: test-cfssl-debian11
     image: debian:11
