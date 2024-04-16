@@ -25,6 +25,7 @@ See full [CHANGELOG.md](https://github.com/githubixx/ansible-role-cfssl/blob/mas
 - **UPDATE**
   - Update `cfssl` tools to version 1.6.5
   - add Debian 12 support
+  - update Github workflow
 
 - **MOLECULE**
   - fix ansible-lint issues in `converge.yml`

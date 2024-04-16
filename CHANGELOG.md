@@ -9,6 +9,7 @@
 - **UPDATE**
   - Update `cfssl` tools to version 1.6.5
   - add Debian 12 support
+  - update Github workflow
 
 - **MOLECULE**
   - fix ansible-lint issues in `converge.yml`
