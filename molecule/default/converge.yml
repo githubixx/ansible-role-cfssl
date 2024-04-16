@@ -1,17 +1,20 @@
 ---
-- hosts: all
+- name: Setup cfssl
+  hosts: all
   gather_facts: false
   tasks:
     - name: Install Python
-      raw: |
+      ansible.builtin.raw: |
         apt-get update
         apt-get -y install ca-certificates python3
+      register: result
       changed_when: false
-      ignore_errors: true
+      failed_when:
+        - result.rc != 0
 
     - name: Call setup
-      setup:
+      ansible.builtin.setup:
 
     - name: Include cfssl role
-      include_role:
+      ansible.builtin.include_role:
         name: githubixx.cfssl
