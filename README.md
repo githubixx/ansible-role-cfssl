@@ -10,7 +10,40 @@ The tag `8.3.0+1.6.5` means that this is the release `8.3.0` of the Ansible role
 
 ## Changelog
 
-see [CHANGELOG.md](https://github.com/githubixx/ansible-role-cfssl/blob/master/CHANGELOG.md)
+**Change history:**
+
+See full [CHANGELOG.md](https://github.com/githubixx/ansible-role-cfssl/blob/master/CHANGELOG.md)
+
+**Recent changes:**
+
+## 8.3.0+1.6.5
+
+- Update `cfssl` tools to version 1.6.5
+
+## 8.2.0+1.6.4
+
+- Update `cfssl` tools to version 1.6.4
+- Add support for Ubuntu 22.04
+- Add verify step for Molecule
+
+## Installation
+
+- Directly download from Github (Change into Ansible roles directory before cloning. You can figure out the role path by using `ansible-config dump | grep DEFAULT_ROLES_PATH` command):
+`git clone https://github.com/githubixx/ansible-role-cfssl.git githubixx.cfssl`
+
+- Via `ansible-galaxy` command and download directly from Ansible Galaxy:
+`ansible-galaxy install role githubixx.cfssl`
+
+- Create a `requirements.yml` file with the following content (this will download the role from Github) and install with
+`ansible-galaxy role install -r requirements.yml` (change `version` if needed):
+
+```yaml
+---
+roles:
+  - name: githubixx.cfssl
+    src: https://github.com/githubixx/ansible-role-cfssl.git
+    version: 8.3.0+1.6.5
+```
 
 ## Role Variables
 
@@ -76,4 +109,4 @@ GNU GENERAL PUBLIC LICENSE Version 3
 
 ## Author Information
 
-http://www.tauceti.blog
+[http://www.tauceti.blog](http://www.tauceti.blog)
