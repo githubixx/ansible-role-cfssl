@@ -14,7 +14,7 @@ cfssl_owner: "root"
 # Group of cfssl binaries
 cfssl_group: "root"
 
-# Operarting system on which "cfssl/cfssljson" should run on
+# Operating system on which "cfssl/cfssljson" should run on
 cfssl_os: "linux"    # use "darwin" for MacOS X, "windows" for Windows
 
 # Processor architecture "cfssl/cfssljson" should run on
